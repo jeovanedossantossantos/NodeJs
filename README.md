@@ -1,7 +1,7 @@
 # NodeJs
 
 # Observações importandes
-<img width="600px" src="https://miro.medium.com/max/1400/0*MNVJq_8e0SJoqZb5.jpg">
+<img width="100%" src="https://miro.medium.com/max/1400/0*MNVJq_8e0SJoqZb5.jpg">
 Para execultar o projeto é com o nodemo siga os seguintes passos.
 
 <ol>
