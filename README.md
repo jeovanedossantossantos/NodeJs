@@ -19,7 +19,7 @@ Para execultar o projeto é com o nodemo siga os seguintes passos.
 </ol>
 
 # Mysql: conectando ao servidor
-<img width="100%" src="https://professor-falken.com/wp-content/uploads/2017/06/Como-ver-las-consultas-que-se-estan-ejecutando-en-MySQL-professor-falken.com_.jpg">
+<img width="100%" height="400px" src="https://professor-falken.com/wp-content/uploads/2017/06/Como-ver-las-consultas-que-se-estan-ejecutando-en-MySQL-professor-falken.com_.jpg">
 
 <ol>
     <li>mysql -h localhost -u root -p</li>
