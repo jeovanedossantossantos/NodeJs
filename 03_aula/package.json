@@ -1,0 +1,14 @@
+{
+    "name": "03_aula",
+    "version": "1.0.0",
+    "main": "index.js",
+    "license": "MIT",
+    "dependencies": {
+        "express": "^4.17.2",
+        "nodemon": "^2.0.15"
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "nodemon index.js"
+    }
+}
