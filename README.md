@@ -1,7 +1,7 @@
 # NodeJs
 
 # Observações importandes
-<img width="600px" src="https://miro.medium.com/max/1400/0*MNVJq_8e0SJoqZb5.jpg">
+<img width="100%" src="https://miro.medium.com/max/1400/0*MNVJq_8e0SJoqZb5.jpg">
 Para execultar o projeto é com o nodemo siga os seguintes passos.
 
 <ol>
@@ -19,6 +19,7 @@ Para execultar o projeto é com o nodemo siga os seguintes passos.
 </ol>
 
 # Mysql: conectando ao servidor
+<img width="100%" height="400px" src="https://professor-falken.com/wp-content/uploads/2017/06/Como-ver-las-consultas-que-se-estan-ejecutando-en-MySQL-professor-falken.com_.jpg">
 
 <ol>
     <li>mysql -h localhost -u root -p</li>
@@ -57,6 +58,7 @@ Para execultar o projeto é com o nodemo siga os seguintes passos.
     <li>UPDATE usuarios SET chave = valor_novo WHERE chave = valor_antigo</li>
     
 </ol>
+<<<<<<< HEAD
 
 # FERRAMENTAS
 
@@ -70,3 +72,5 @@ Para execultar o projeto é com o nodemo siga os seguintes passos.
 </li>
 
 </ol>
+=======
+>>>>>>> 05150202dd27cd3887bc768c8dbb58377f081b20
