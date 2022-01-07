@@ -58,7 +58,6 @@ Para execultar o projeto é com o nodemo siga os seguintes passos.
     <li>UPDATE usuarios SET chave = valor_novo WHERE chave = valor_antigo</li>
     
 </ol>
-<<<<<<< HEAD
 
 # FERRAMENTAS
 
@@ -72,5 +71,3 @@ Para execultar o projeto é com o nodemo siga os seguintes passos.
 </li>
 
 </ol>
-=======
->>>>>>> 05150202dd27cd3887bc768c8dbb58377f081b20
