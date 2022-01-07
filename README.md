@@ -41,5 +41,32 @@ Para execultar o projeto é com o nodemo siga os seguintes passos.
         </p>
     </li>
     <li>DESCRIBE nome_da_tabela; => mostra as descrições da tabela</li>
+    <li>
+    Insere valores na tabela
+    <p>
+    INSERT INTO usuarios(nome, email, idade) VALUES(
+    "Jeovane dos Santos",
+    "jeovane@gmail.com",
+    8
+);
+    </p>
+    </li>
+    <li>SELECT * FROM ususuarios; => seleciona todos os usarios</li>
+    <li>SELECT * FROM usuarios WHERE chave (=,=>,=<) valor_da_chave; Lista usuarios expecificos</li>
+    <li>DELETE FROM usuarios WHERE chave = valor_da_chave => apaga um dado expecifico</li>
+    <li>UPDATE usuarios SET chave = valor_novo WHERE chave = valor_antigo</li>
     
+</ol>
+
+# FERRAMENTAS
+
+<ol>
+<li>yarn add sequelize</li>
+<li>yarn add mysql2</li>
+<li>yarn add dotenv</li>
+<li>const dotenv = require('dotenv/config')
+<p>Para poder usar o process.env.PASWORD que estara dentro do seu arquivo .env</p>
+
+</li>
+
 </ol>
