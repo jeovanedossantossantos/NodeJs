@@ -71,3 +71,9 @@ Para execultar o projeto é com o nodemo siga os seguintes passos.
 </li>
 
 </ol>
+
+# PRIMEIRO PROJETO, FERRAMENTAS NECESSARIAS 
+
+<ol>
+    <li>yarn add express-handlebars</li>
+</ol>
