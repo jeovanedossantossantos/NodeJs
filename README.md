@@ -77,4 +77,11 @@ Para execultar o projeto é com o nodemo siga os seguintes passos.
 <ol>
     <li>Criar projeto, seguindo o passo a passo que está no inicio deste artigo.</li>
     <li>yarn add express-handlebars</li>
+    <li>yarn add body-parser --save</li>
+    <li>
+        <p>
+            Ao criar o arquivo Db.js chame o const dotenv = require('dotenv').config(), enves dê,
+            const dotenv = require('dotenv/config')
+        </p>
+    </li>
 </ol>
