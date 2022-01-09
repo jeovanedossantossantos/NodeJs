@@ -19,7 +19,17 @@ app.use(bodyPareser.json())
 
 //Rotas
 app.get("/", function(req, res) {
-    res.render('layout/home')
+    // ASC
+    Post.findAll({
+        order: [
+            ['id', 'DESC']
+        ]
+    }).then(posts => {
+        res.render('layout/home', {
+            posts: posts.map(post => post.toJSON())
+        })
+    })
+
 })
 app.get('/cad', function(req, res) {
     res.render("layout/form")
@@ -37,6 +47,23 @@ app.post('/add', function(req, res) { //recebe os dados dos formuularios
     })
 
     // res.send('FORMULARIO RECEBIDO ' + req.body.titulo + " " + req.body.conteudo)
+
+})
+
+app.get('/deletar/:id', function(req, res) {
+    Post.destroy({
+        where: {
+            'id': req.params.id
+        }
+    }).then(function() {
+
+        res.send("Apagado com sucesso")
+
+    }).catch(function(erro) {
+        res.send("Não existe")
+    })
+
+
 
 })
 

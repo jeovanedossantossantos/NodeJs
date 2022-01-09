@@ -72,7 +72,7 @@ Para execultar o projeto é com o nodemo siga os seguintes passos.
 
 </ol>
 
-# PRIMEIRO PROJETO, FERRAMENTAS NECESSARIAS 
+# PRIMEIRO PROJETO, FERRAMENTAS NECESSARIAS E DICAS
 
 <ol>
     <li>Criar projeto, seguindo o passo a passo que está no inicio deste artigo.</li>
@@ -84,4 +84,20 @@ Para execultar o projeto é com o nodemo siga os seguintes passos.
             const dotenv = require('dotenv/config')
         </p>
     </li>
+    <li>No lugar de Post.all() substitua por Post.findAll()</li>
+    <li>Substitua Post.findAll().then(function(posts) {
+         res.render('layout/home', { posts: posts })
+     })
+     por
+     Post.findAll().then(posts => {
+        res.render('layout/home', {
+            posts: posts.map(post => post.toJSON())
+        })
+    })
+     </li>
 </ol>
+
+# MONGODB
+
+Carregando...
+<img width="100%" height="400px" src="./img/Carregando-novidades-removebg-preview.png">
