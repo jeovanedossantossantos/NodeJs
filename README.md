@@ -106,7 +106,7 @@ Para execultar o projeto é com o nodemo siga os seguintes passos.
     <li>show collections; --> exibe todas as collection(documentos)</li>
     <li>yarn add mongoose -->instala o mongoose</li>
     <li>show databases; --> mostra todos os bancos de dados</li>
-    <li>use nome_do_banco --> cria um banco novo</li>
+    <li>use nome_do_banco --> acessa um banco</li>
     <li>Dica: se estiver usando um versão do mongo assima do 5, não é mais necessário usar o useMongoClient: true.</li>
     <li>db.nome_da_collection.find(); --> ver os dados salvos</li>
 </ol>
