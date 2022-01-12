@@ -1,0 +1,13 @@
+{
+    "name": "05_aula_MongoDB",
+    "version": "1.0.0",
+    "main": "index.js",
+    "license": "MIT",
+    "dependencies": {
+        "mongoose": "^6.1.6"
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "nodemon index.js"
+    }
+}

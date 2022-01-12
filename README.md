@@ -98,6 +98,19 @@ Para execultar o projeto é com o nodemo siga os seguintes passos.
 </ol>
 
 # MONGODB
+<img width="100%" height="400px" src="https://e-tinet.com/wp-content/uploads/2018/10/mongoDB-banco-de-dados-nosql-2.png">
+
+<ol>
+    <li>mongod --> coloque esse comando no cmd para roda o servidor do mongo</li>
+    <li>mongo --> coloque esse comando no cmd para roda o o mongo</li>
+    <li>show collections; --> exibe todas as collection(documentos)</li>
+    <li>yarn add mongoose -->instala o mongoose</li>
+    <li>show databases; --> mostra todos os bancos de dados</li>
+    <li>use nome_do_banco --> cria um banco novo</li>
+    <li>Dica: se estiver usando um versão do mongo assima do 5, não é mais necessário usar o useMongoClient: true.</li>
+    <li>db.nome_da_collection.find(); --> ver os dados salvos</li>
+</ol>
+
 
 Carregando...
 <img width="100%" height="400px" src="./img/Carregando-novidades-removebg-preview.png">
