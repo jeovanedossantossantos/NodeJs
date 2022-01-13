@@ -4,11 +4,24 @@ const bodyParser = require("body-parser")
 const app = express()
 const admin = require("./routes/admin")
 const path = require("path")
-    // const mongoose = require("mongoose")
+const mongoose = require("mongoose")
 const cors = require('cors')
+const session = require("express-session")
+const flash = require("connect-flash")
+
+// Sessão
+app.use(session({
+    secret: "teste",
+    resave: true,
+    saveUninitialized: true
+}))
+app.use(flash())
 
 app.use((req, res, next) => {
     // console.log("Acessando o Middleware")
+    res.locals.success_msg = req.flash('success_msg')
+    res.locals.error_msg = req.flash('error_msg')
+
     res.header("Access-Control-Allow-Origin", "*")
     res.header("Access-Control-Allow-Methods", 'GET,PUT,POST,DELETE')
     app.use(cors())
@@ -27,10 +40,29 @@ var hbs = handlebars.create({ defaultLayout: false });
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
+// Banco
+mongoose.Promise = global.Promise
+mongoose.connect("mongodb://localhost/blogapp")
+    .then(() => {
 
-// app.use(express.static(path.join(__dirname, "public")))
+        console.log("Conecção feita com sucesso")
+
+    })
+    .catch((err) => {
+        console.log("Conecção falho " + err)
+    })
+
+
+app.use(express.static(path.join(__dirname, "public")))
+
+app.use((req, res, next) => {
+    console.log("Md")
+    next()
+
+})
+
 // Rotas
-app.use("admin", admin)
+app.use("/admin", admin)
     // outros
 const PORT = 8081
 app.listen(PORT, () => {

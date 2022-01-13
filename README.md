@@ -121,6 +121,8 @@ Para execultar o projeto é com o nodemo siga os seguintes passos.
     <li> yarn add express-handlebars --save</li>
     <li>yarn add body-parser --save</li>
     <li>yarn add mongoose --save</li>
+    <li>yarn add express-session --save</li>
+    <li>yarn add connect-flash --save</li>
 </ol>
 
 

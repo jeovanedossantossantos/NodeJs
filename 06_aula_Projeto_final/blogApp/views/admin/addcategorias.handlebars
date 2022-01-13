@@ -1,6 +1,11 @@
-<h2>Lista de Categorias</h2>
+<h3>Nova Categoria</h3>
+<form action="/admin/categorias/nova" method="POST">
+    <label for="nome">Name:</label>
+    <input type="text" id="nome" name="nome" placeholder="Nome da categoria">
 
-<hr>
+    <label for="slug">Slug:</label>
+    <input type="text" id="slug" name="slug" placeholder="Nome do slug">
 
-<button class="btn btn-success">Nova categoria</button>
+    <button type="submit" class="btn btn-success">Criar categoria</button>
 
+</form>
