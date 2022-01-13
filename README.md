@@ -114,7 +114,7 @@ Para execultar o projeto é com o nodemo siga os seguintes passos.
 # Projeto final
 
 <ol>
-    <li>Crair um pastar e abri no vscode</li>
+    <li>Criar uma pasta e abrir no vscode</li>
     <li>No terminal digite yarn init</li>
     <li>yarn</li>
     <li>yarn add express --save</li>
