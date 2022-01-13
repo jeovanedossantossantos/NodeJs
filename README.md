@@ -111,6 +111,18 @@ Para execultar o projeto é com o nodemo siga os seguintes passos.
     <li>db.nome_da_collection.find(); --> ver os dados salvos</li>
 </ol>
 
+# Projeto final
+
+<ol>
+    <li>Crair um pastar e abri no vscode</li>
+    <li>No terminal digite yarn init</li>
+    <li>yarn</li>
+    <li>yarn add express --save</li>
+    <li> yarn add express-handlebars --save</li>
+    <li>yarn add body-parser --save</li>
+    <li>yarn add mongoose --save</li>
+</ol>
+
 
 Carregando...
 <img width="100%" height="400px" src="./img/Carregando-novidades-removebg-preview.png">
