@@ -84,12 +84,12 @@ Para execultar o projeto é com o nodemo siga os seguintes passos.
             const dotenv = require('dotenv/config')
         </p>
     </li>
-    <li>No lugar de Post.all() substitua por Post.findAll()</li>
-    <li>Substitua Post.findAll().then(function(posts) {
+    <li>No lugar de Post.all() substitua por Post.find()</li>
+    <li>Substitua Post.find().then(function(posts) {
          res.render('layout/home', { posts: posts })
      })
      por
-     Post.findAll().then(posts => {
+     Post.find().then(posts => {
         res.render('layout/home', {
             posts: posts.map(post => post.toJSON())
         })
@@ -123,6 +123,7 @@ Para execultar o projeto é com o nodemo siga os seguintes passos.
     <li>yarn add mongoose --save</li>
     <li>yarn add express-session --save</li>
     <li>yarn add connect-flash --save</li>
+    <li>categoria: categoria substitua por categoria: categoria.toJSON() pois deve converter para json</li>
 </ol>
 
 

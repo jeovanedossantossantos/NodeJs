@@ -1,6 +1,15 @@
+
 <h2>Lista de Categorias</h2>
 
 <hr>
 
 <a href="/admin/categorias/add"><button class="btn btn-success">Nova categoria</button></a>
 
+{{#each categorias}}
+    <div class="alert alert-danger">
+        {{nome}} | {{slug}} | {{date}} | <a href="/admin/categorias/edit/{{_id}}"><button>Editar</button></a>
+        | <a href="/admin/categorias/excluir/{{_id}}"><button>Exluir</button></a>
+    </div>
+
+    {{else}}
+{{/each}}
