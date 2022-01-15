@@ -140,6 +140,7 @@ Para execultar o projeto é com o nodemo siga os seguintes passos.
    
 }) está rota funcione</p>
     </li>
+    <li><a href="https://www.youtube.com/watch?v=9eWnkkg9Qy8">Video que pode pasar melhor a ideia tomada.</a></li>
 </ol>
 
 
