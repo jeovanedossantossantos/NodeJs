@@ -125,21 +125,25 @@ Para execultar o projeto é com o nodemo siga os seguintes passos.
     <li>yarn add connect-flash --save</li>
     <li>categoria: categoria substitua por categoria: categoria.toJSON() pois deve converter para json</li>
     <li>Para altera devese passar o id <form action="/admin/categorias/edit/{{categoria._id}}" method="POST">
-     para que <p>router.post("/categorias/edit/:id", async(req, res) => {
+     para que <p>
+            
+     router.post("/categorias/edit/:id", async(req, res) => {
 
-    try {
-        const id = req.params.id;
-        const c = req.body;
-        console.log(c)
-        const respo = await Categorias.findByIdAndUpdate(id, c)
-        console.log("ok")
-        res.redirect("/admin/categorias")
-    } catch (err) {
-        console.log("Erro " + err)
-    }
+        try {
+            const id = req.params.id;
+            const c = req.body;
+            console.log(c)
+            const respo = await Categorias.findByIdAndUpdate(id, c)
+            console.log("ok")
+            res.redirect("/admin/categorias")
+        } catch (err) {
+            console.log("Erro " + err)
+        }
    
-}) está rota funcione</p>
-    </li>
+       }) 
+        
+está rota funcione</p></li>
+<li><a href="https://www.youtube.com/watch?v=9eWnkkg9Qy8">Video que pode pasar melhor a ideia tomada.</a></li>
 </ol>
 
 
