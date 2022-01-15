@@ -41,8 +41,7 @@ new jeovane({
         email: "jeovanedos2santos@gmail.com",
         idade: 23,
         pais: "Brasil"
-    }).save()
-    .then(() => {
+    }).save().then(() => {
         console.log("Slvo com sucesso")
     })
     .catch((erro) => {

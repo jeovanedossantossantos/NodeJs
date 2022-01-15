@@ -56,7 +56,7 @@ mongoose.connect("mongodb://localhost/blogapp")
 app.use(express.static(path.join(__dirname, "public")))
 
 app.use((req, res, next) => {
-    console.log("Md")
+    // console.log("Md")
     next()
 
 })

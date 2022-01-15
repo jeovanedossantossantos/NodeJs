@@ -7,7 +7,7 @@
 {{/each}}
 
 <h3>Editar Categoria</h3>
-<form action="/admin/categorias/edit" method="POST">
+<form action="/admin/categorias/edit/{{categoria._id}}" method="POST">
 <input type="hidden" nome="id" value="{{categoria._id}}">
     <label for="nome">Name:</label>
     <input type="text" id="nome" name="nome" placeholder="Nome da categoria" value="{{categoria.nome}}">

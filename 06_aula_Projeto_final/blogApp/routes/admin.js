@@ -89,7 +89,9 @@ router.get("/categorias/edit/:id", (req, res) => {
         // res.render("admin/editar", { categoria: categoria })
         res.render('admin/editar', {
             categoria: categoria.toJSON()
+
         })
+        console.log(categoria)
     }).catch((err) => {
         req.flash("erro_msg", "Esta categoria não existe")
         res.redirect("/admin")
@@ -98,24 +100,52 @@ router.get("/categorias/edit/:id", (req, res) => {
 
 })
 
-router.post("/categorias/edit", (req, res) => {
-    Categorias.findOne({ _id: req.body.id }).then((categoria) => {
-        categoria.nome = req.body.nome
-        categoria.slug = req.body.slug
-        console.log(req.body.nome)
+router.post("/categorias/edit/:id", async(req, res) => {
 
-        categoria.save().then(() => {
-            req.flash("success_msg", "Sucess")
-            res.redirect("/admin/categorias")
-        }).catch((err) => {
-            req.flash("error_msg", "Erro")
-            res.redirect("/admin/categorias")
-        })
-    }).catch((err) => {
-        req.flash("error_msg", "Erro")
+    try {
+        const id = req.params.id;
+        const c = req.body;
+        console.log(c)
+        const respo = await Categorias.findByIdAndUpdate(id, c)
+        console.log("ok")
         res.redirect("/admin/categorias")
-    })
+    } catch (err) {
+        console.log("Erro " + err)
+    }
+    // const r = Categorias.updateOne({ _id: req.params.id }, req.body, (err) => {
+    //     if (err) {
+    //         console.log("erro " + err)
+    //     } else {
+    //         console.log("Atualizado")
+    //         res.redirect("/admin/categorias")
+    //     }
+
+    // })
 })
+
+// router.post("/categorias/edit", (req, res) => {
+//     Categorias.find({ _id: req.body.id }).then((categoria) => {
+//         categoria = req.body
+//             // categoria.slug = req.body.slug
+//         console.log(categoria)
+
+
+
+//         categoria.save().then(() => {
+//             req.flash("success_msg", "Sucess")
+//             res.redirect("/admin/categorias")
+//             console.log("salvo" + req.body.nome)
+//         }).catch((err) => {
+//             console.log("Erro " + err)
+//             req.flash("error_msg", "Erro")
+//             res.redirect("/admin/categorias")
+//         })
+//     }).catch((err) => {
+//         console.log("Erro 2 " + err)
+//             // req.flash("error_msg", "Erro")
+//             // res.redirect("/admin/categorias")
+//     })
+// })
 
 
 
