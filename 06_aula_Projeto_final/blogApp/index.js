@@ -60,8 +60,11 @@ app.use((req, res, next) => {
     next()
 
 })
+app.get("/", (req, res) => {
 
-// Rotas
+        res.send("Pagina proncipal")
+    })
+    // Rotas
 app.use("/admin", admin)
     // outros
 const PORT = 8081

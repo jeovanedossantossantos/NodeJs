@@ -8,8 +8,13 @@
 {{#each categorias}}
     <div class="alert alert-danger">
         {{nome}} | {{slug}} | {{date}} | <a href="/admin/categorias/edit/{{_id}}"><button>Editar</button></a>
-        | <a href="/admin/categorias/excluir/{{_id}}"><button>Exluir</button></a>
+        | <form action="/admin/categorias/deletar" method="POST">
+            <input type="hidden" name="id" value="{{_id}}">
+            <button type="submit">Deletar</button>
+
+        </form>
     </div>
 
     {{else}}
+    <h2>Nenhuma categoria</h2>
 {{/each}}

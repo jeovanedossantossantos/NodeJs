@@ -3,7 +3,8 @@ const router = express.Router()
 const mongoose = require("mongoose")
 require("../models/Categoria")
 const Categorias = mongoose.model('categorias')
-
+require("../models/Postagens")
+const Postagens = mongoose.model('postagens')
 router.get("/", (req, res) => {
     res.render("admin/index")
 })
@@ -100,6 +101,95 @@ router.post("/categorias/edit/:id", async(req, res) => {
     } catch (err) {
         console.log("Erro " + err)
         res.redirect("/admin/categorias")
+    }
+
+})
+router.post("/categorias/deletar", (req, res) => {
+    Categorias.remove({ _id: req.body.id }).then(() => {
+
+        console.log("Deletado com sucesso")
+        res.redirect("/admin/categorias")
+    }).catch((err) => {
+        console.log("Deletado falho")
+        res.redirect("/admin/categorias")
+    })
+})
+
+router.get("/postagens", (req, res) => {
+
+    Postagens.find().populate("categoria").sort({ date: "desc" }).then(postagens => {
+            res.render('admin/postagens', {
+                    postagens: postagens.map(postagens => postagens.toJSON())
+
+                })
+                // console.log(" pos " + postagens)
+        }).catch((err) => {
+            res.flash("erros_msg", "Houve um essor na listgem ")
+            res.redirect("/admin")
+
+
+        })
+        // Postagens.find().populate("categorias").sort({ data: "desc" }).then((postagens) => {
+        //     // res.send("Ok")
+        //     res.render("admin/postagens", {
+        //         postagens: postagens.map(postagens => postagens.toJSON())
+        //             // postagens: "Isso"
+        //     })
+        // }).catch((err) => {
+        //     // res.flash("erros_msg", "Houve um essor na listgem ")
+        //     // res.redirect("admin/postagens")
+        //     console.log("ERRO " + err)
+        // })
+
+})
+
+router.get("/postagens/add", (req, res) => {
+    Categorias.find().then((categoria) => {
+        // console.log("ok")
+        // console.log(categoria)
+        res.render("admin/addpostagens", { categoria: categoria.map(categoria => categoria.toJSON()) })
+    }).catch((err) => {
+        console.log("erro " + err)
+        res.redirect("/admin")
+    })
+
+})
+
+router.post("/postagens/nova", (req, res) => {
+    let valor
+    Categorias.findOne({ _id: req.body.id }).then((categoria) => {
+        res.render('admin/editar', {
+                categoria: categoria.toJSON(),
+
+            })
+            // valor = categoria
+
+
+    }).catch((err) => {
+        console.log("erro")
+    })
+
+    var erro = []
+    if (req.body.categoria == "0") {
+        erro.push({ texto: "Categoria invalida, registre uma categoria" })
+    }
+    if (erro.length > 0) {
+        res.render("admin/addpostagens", { erro: erro })
+    } else {
+        const novaPostagem = {
+                titulo: req.body.titulo,
+                slug: req.body.slug,
+                descricao: req.body.descricao,
+                conteudo: req.body.conteudo,
+                categoria: req.body.categoria
+            }
+            // console.log(req.body)
+        new Postagens(novaPostagem).save().then(() => {
+            console.log("Postagem salva")
+            res.redirect("/admin/postagens")
+        }).catch((err) => {
+            console.log("Erro " + err)
+        })
     }
 
 })
