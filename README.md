@@ -148,25 +148,20 @@ está rota funcione</p></li>
 <li>
         Se acontecer este erro...
         <p> (node:14948) [MONGODB DRIVER] Warning: collection.remove is deprecated. Use deleteOne, deleteMany, or bulkWrite instead.
-        (Use `node --trace-warnings ...` to show where the warning was created)</p>
-
-        é porque a forama de excluir que foi utilizada está obsoleta no mongo,
-        Então troque por...
-        <p>
-            
-            <form action="/admin/postagens/deletar/" method="POST">
+            (Use `node --trace-warnings ...` to show where the warning was created)</p><p> é porque a forma de excluir que foi utilizada está obsoleta no mongo.
+        Então troque por...</p>
+    
+            <form action="/admin/postagens/deletar" method="POST">
             
                 <input type="hidden" name="id" value="{{_id}}">
                 <button type="submit">Deletar</button>
 
             </form>
 
-        </p>
-
-            e na sua rota coloque...
-
-
-        <p>
+    
+    
+</li>
+<li><p>e na sua rota coloque...</p><p>
             
         router.post("/postagem/deletar", (req, res) => {
             Postagens.remove({ _id: req.body.id }).then(() => {
@@ -178,10 +173,7 @@ está rota funcione</p></li>
                 res.redirect("/admin/postagens")
             })
         })
-
-        </p>
-
-</li>
+</p></li>
 
 </ol>
 
