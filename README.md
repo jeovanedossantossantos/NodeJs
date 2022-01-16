@@ -129,7 +129,7 @@ Para execultar o projeto é com o nodemo siga os seguintes passos.
     <li>yarn add express-session --save</li>
     <li>yarn add connect-flash --save</li>
     <li>categoria: categoria substitua por categoria: categoria.toJSON() pois deve converter para json</li>
-    <li>Para altera devese passar o id <form action="/admin/categorias/edit/{{categoria._id}}" method="POST">
+    <li>Para altera deve-se passar o id <form action="/admin/categorias/edit/{{categoria._id}}" method="POST">
      para que <p>
             
      router.post("/categorias/edit/:id", async(req, res) => {
