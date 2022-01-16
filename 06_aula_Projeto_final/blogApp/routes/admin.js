@@ -194,4 +194,81 @@ router.post("/postagens/nova", (req, res) => {
 
 })
 
+router.get("/postagens/edit/:id", (req, res) => {
+
+    Postagens.findOne({ _id: req.params.id }).then((postagem) => {
+        Categorias.find().then((categoria) => {
+            res.render("admin/editpostagens", {
+                categoria: categoria.map(categoria => categoria.toJSON()),
+                postagem: postagem.toJSON()
+            })
+
+        }).catch((err) => {
+            console.log("Erro " + err)
+            res.redirect("/admin/postagens")
+
+
+        })
+    }).catch((err) => {
+        console.log("Erro " + err)
+        res.redirect("/admin/postagens")
+
+    })
+
+
+
+})
+
+router.post("/postagem/edit", async(req, res) => {
+
+    try {
+        const id = req.body.id;
+        const c = req.body;
+        console.log(c)
+        const respo = await Postagens.findByIdAndUpdate(id, c)
+        console.log("ok")
+        res.redirect("/admin/postagens")
+    } catch (err) {
+        console.log("Erro " + err)
+        res.redirect("/admin/postagens")
+    }
+
+    // Postagens.findOne({ _id: req.body.id }).then((postagem) => {
+    //     postagem = req.body
+
+
+
+    //     postagem.save().then(() => {
+    //         console.log("Altero a postagem")
+    //         res.redirect("/admin/postagens")
+    //     }).catch((err) => {
+    //         console.log("erro " + err)
+    //         res.redirect("/admin/postagens")
+    //     })
+
+    // }).catch((err) => {
+    //     console.log("erro " + err)
+    //     res.redirect("/admin/postagens")
+    // })
+
+})
+
+// router.get("/postagens/deletar/:id", (req, res) => {
+
+// // Postagens.remove({ _id: req.params.id }).then(() => {
+//     res.redirect("/admin/postagem")
+// })
+
+router.post("/postagem/deletar", (req, res) => {
+        Postagens.remove({ _id: req.body.id }).then(() => {
+
+            console.log("Deletado com sucesso")
+            res.redirect("/admin/postagens")
+        }).catch((err) => {
+            console.log("Deletado falho")
+            res.redirect("/admin/postagens")
+        })
+    })
+    // })
+
 module.exports = router

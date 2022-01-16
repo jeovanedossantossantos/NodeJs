@@ -9,7 +9,14 @@
         <h4>{{titulo}}</h4>
         <p>{{descricao}}</p>
         <small>{{data}}</small>
-        <small>{{categoria.nome}}</small>
+        <small>{{categoria.nome}}</small><br>
+        <a href="/admin/postagens/edit/{{_id}}"><button>Editar</button></a>
+        
+        <form action="/admin/postagem/deletar" method="POST">
+            <input type="hidden" name="id" value="{{_id}}">
+            <button type="submit">Deletar</button>
+
+        </form>
     </div>
 
     {{else}}

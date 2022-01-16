@@ -144,6 +144,45 @@ Para execultar o projeto é com o nodemo siga os seguintes passos.
         
 está rota funcione</p></li>
 <li><a href="https://www.youtube.com/watch?v=9eWnkkg9Qy8">Video que pode pasar melhor a ideia tomada.</a></li>
+
+<li>
+        Se acontecer este erro...
+        <p> (node:14948) [MONGODB DRIVER] Warning: collection.remove is deprecated. Use deleteOne, deleteMany, or bulkWrite instead.
+        (Use `node --trace-warnings ...` to show where the warning was created)</p>
+
+        é porque a forama de excluir que foi utilizada está obsoleta no mongo,
+        Então troque por...
+        <p>
+            
+            <form action="/admin/postagens/deletar/" method="POST">
+            
+                <input type="hidden" name="id" value="{{_id}}">
+                <button type="submit">Deletar</button>
+
+            </form>
+
+        </p>
+
+            e na sua rota coloque...
+
+
+        <p>
+            
+        router.post("/postagem/deletar", (req, res) => {
+            Postagens.remove({ _id: req.body.id }).then(() => {
+
+                console.log("Deletado com sucesso")
+                res.redirect("/admin/postagens")
+            }).catch((err) => {
+                console.log("Deletado falho")
+                res.redirect("/admin/postagens")
+            })
+        })
+
+        </p>
+
+</li>
+
 </ol>
 
 
