@@ -9,10 +9,15 @@ Para execultar o projeto é com o nodemo siga os seguintes passos.
 <li>yarn add express --save => instalar o express</li>
 <li>yarn add nodemon -D => instala o nodemon</li>
 <li>No arquivo package.json acressente as seguintes linhas:
-    <p>"scripts": {
+    <p>
+        
+     "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon index.js"
-}</p>
+    }
+
+</p>
+    
 </li>
 <li>yarn start => para rodar o projeto</li>
 
