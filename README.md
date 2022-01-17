@@ -9,10 +9,15 @@ Para execultar o projeto é com o nodemo siga os seguintes passos.
 <li>yarn add express --save => instalar o express</li>
 <li>yarn add nodemon -D => instala o nodemon</li>
 <li>No arquivo package.json acressente as seguintes linhas:
-    <p>"scripts": {
+    <p>
+        
+     "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon index.js"
-}</p>
+    }
+
+</p>
+    
 </li>
 <li>yarn start => para rodar o projeto</li>
 
@@ -124,7 +129,7 @@ Para execultar o projeto é com o nodemo siga os seguintes passos.
     <li>yarn add express-session --save</li>
     <li>yarn add connect-flash --save</li>
     <li>categoria: categoria substitua por categoria: categoria.toJSON() pois deve converter para json</li>
-    <li>Para altera devese passar o id <form action="/admin/categorias/edit/{{categoria._id}}" method="POST">
+    <li>Para altera deve-se passar o id <form action="/admin/categorias/edit/{{categoria._id}}" method="POST">
      para que <p>
             
      router.post("/categorias/edit/:id", async(req, res) => {
@@ -148,25 +153,20 @@ está rota funcione</p></li>
 <li>
         Se acontecer este erro...
         <p> (node:14948) [MONGODB DRIVER] Warning: collection.remove is deprecated. Use deleteOne, deleteMany, or bulkWrite instead.
-        (Use `node --trace-warnings ...` to show where the warning was created)</p>
-
-        é porque a forama de excluir que foi utilizada está obsoleta no mongo,
-        Então troque por...
-        <p>
-            
-            <form action="/admin/postagens/deletar/" method="POST">
+            (Use `node --trace-warnings ...` to show where the warning was created)</p><p> é porque a forma de excluir que foi utilizada está obsoleta no mongo.
+        Então troque por...</p>
+    
+            <form action="/admin/postagens/deletar" method="POST">
             
                 <input type="hidden" name="id" value="{{_id}}">
                 <button type="submit">Deletar</button>
 
             </form>
 
-        </p>
-
-            e na sua rota coloque...
-
-
-        <p>
+    
+    
+</li>
+<li><p>e na sua rota coloque...</p><p>
             
         router.post("/postagem/deletar", (req, res) => {
             Postagens.remove({ _id: req.body.id }).then(() => {
@@ -178,10 +178,7 @@ está rota funcione</p></li>
                 res.redirect("/admin/postagens")
             })
         })
-
-        </p>
-
-</li>
+</p></li>
 
 </ol>
 
