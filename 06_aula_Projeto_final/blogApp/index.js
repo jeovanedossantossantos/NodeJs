@@ -62,7 +62,7 @@ app.use((req, res, next) => {
 })
 app.get("/", (req, res) => {
 
-        res.send("Pagina proncipal")
+        return "Pagina principal"
     })
     // Rotas
 app.use("/admin", admin)

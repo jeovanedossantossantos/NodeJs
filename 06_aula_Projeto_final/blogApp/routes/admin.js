@@ -10,15 +10,23 @@ router.get("/", (req, res) => {
 })
 
 router.get("/posts", (req, res) => {
-        res.send("Pgina ok")
+        console.log("ok1111 ")
+        return res.status(200).json({
+            id: 1,
+            message: "Pgina ok"
+        })
+
     })
     // Rota de cadastro
 router.get("/categorias", (req, res) => {
 
         Categorias.find().sort({ date: "desc" }).then(categorias => {
-            res.render('admin/categorias', {
-                categorias: categorias.map(categorias => categorias.toJSON())
-            })
+            // res.render('admin/categorias', {
+            //     categorias: categorias.map(categorias => categorias.toJSON())
+            // })
+            return res.status(200).json(categorias.map(categorias => categorias.toJSON()))
+
+
         }).catch((err) => {
             res.flash("erros_msg", "Houve um essor na listgem ")
             res.redirect("/admin")
@@ -270,5 +278,6 @@ router.post("/postagem/deletar", (req, res) => {
         })
     })
     // })
+
 
 module.exports = router
